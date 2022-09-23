@@ -5,10 +5,30 @@ import Logo from "./assets/duckduckgo-logo.png"
 
 function App() {
   const [input, setInput] = useState("");
+  const [loc, setLoc] = useState({});
 
   const handleChange = (e) => {
-    setInput(e.target.value)
-    console.log(input)
+    setInput(e.target.value);
+    console.log(input);
+  }
+
+  function success(loc) {
+    const crd = loc.coords;
+
+    console.log('Raw data:', loc);
+  
+    console.log('Your current position is:');
+    console.log(`Latitude : ${crd.latitude}`);
+    console.log(`Longitude: ${crd.longitude}`);
+    return loc;
+  }
+  
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+
+  function handleLocation() {
+    navigator.geolocation.getCurrentPosition(success, error);
   }
 
 
@@ -24,7 +44,9 @@ function App() {
           {/* search form clear button needs to remove the input field */}
           <input id="search-form-clear" type="button" value="X"/>
         </form>
-        {/* <InputField onInput={handleChange} /> */}
+          {/* <InputField onInput={handleChange} /> */}
+        <button onClick={handleLocation}>console.logging location</button>
+
       </div>
     </div>
   );
