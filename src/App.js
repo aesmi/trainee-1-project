@@ -1,3 +1,4 @@
+import React from 'react';
 import InputField from "./components/InputField";
 import WeatherPopupBox from "./components/WeatherPopupBox";
 import "./css/mainPage.css";
