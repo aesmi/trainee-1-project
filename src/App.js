@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from "react";
+import axios from 'axios'
 import InputField from "./components/InputField";
 import WeatherPopupBox from "./components/WeatherPopupBox";
 import "./css/mainPage.css";
-import { useState } from "react";
+import "./css/weather-search.css";
+import "./css/duckduck-search.css";
 import Logo from "./assets/duckduckgo-logo.png";
 
 function App() {
+
+  // const url =`https://api.openweathermap.org/data/2.5/weather?q=sydney&appid=483fbfa21ef33128ac6d64c113da5d67`
+
   const [input, setInput] = useState("");
   const [loc, setLoc] = useState({});
 
@@ -35,7 +40,15 @@ function App() {
 
   return (
     <div className="App">
-      <div className="this-is-everything">
+        <div className="weather">
+          <div className="location">
+            <p>Sydney</p>
+            <WeatherPopupBox>hello</WeatherPopupBox>
+          <button onClick={handleLocation}>console.logging location</button> {/*this will be removed soon*/}
+          </div>
+        </div>
+
+      <div className="duckduck">
         <img className="logo" src={Logo} />
         <p>(totally original idea)</p>
         <h1>?!?</h1>
@@ -55,8 +68,6 @@ function App() {
           <input id="search-form-clear" type="button" value="X" />
         </form>
         {/* <InputField onInput={handleChange} /> */}
-        <WeatherPopupBox>hello</WeatherPopupBox>
-        <button onClick={handleLocation}>console.logging location</button>
       </div>
     </div>
   );
