@@ -10,7 +10,7 @@ import Logo from "./assets/duckduckgo.png";
 
 function App() {
   const [data, setData] = useState({});
-  const [location, setLocation] = useState("Sydney");
+  const [location, setLocation] = useState("");
 
   const url =`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=483fbfa21ef33128ac6d64c113da5d67`
 
@@ -20,7 +20,7 @@ function App() {
         setData(response.data)
         console.log(response.data)
       })
-      setLocation("Sydney")
+      setLocation("")
     }
   }
 
