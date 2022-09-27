@@ -1,0 +1,13 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.type-animation {
+    position: absolute;
+    top: 0.6rem;
+    font-size: 1.1em;
+    font-weight: normal;
+    color: #BBB;
+}
