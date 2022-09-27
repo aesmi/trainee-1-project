@@ -1,4 +1,20 @@
-.search-bar {
+import styled from "styled-components";
+
+const SearchContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3vh;
+`;
+
+const Logo = styled.img`
+  width: 20vw;
+  height: auto;
+  margin-top: 3vh;
+`;
+
+const SearchBar = styled.form`
   display: block;
   box-sizing: border-box;
   position: relative;
@@ -15,18 +31,10 @@
 
   font-size: 1.14em;
   padding-right: 3.5em;
-}
+`;
 
-input {
-  font-family: "DDG_ProximaNova", "DDG_ProximaNova_UI_0", "DDG_ProximaNova_UI_1",
-    "DDG_ProximaNova_UI_2", "DDG_ProximaNova_UI_3", "DDG_ProximaNova_UI_4",
-    "DDG_ProximaNova_UI_5", "DDG_ProximaNova_UI_6", "Proxima Nova",
-    "Helvetica Neue", "Helvetica", "Segoe UI", "Nimbus Sans L",
-    "Liberation Sans", "Open Sans", FreeSans, Arial, sans-serif;
-}
-
-#search-input {
-  color: #BBB;
+const SearchInput = styled.input`
+  color: #bbb;
   font-size: 1.1em;
   font-weight: normal;
   display: block;
@@ -39,9 +47,9 @@ input {
   z-index: 1;
   position: relative;
   top: -1px;
-}
+`;
 
-#search-form-clear {
+const SearchFormClear = styled.input`
   visibility: visible;
   opacity: 0.9;
   margin-right: 3.2em;
@@ -72,9 +80,10 @@ input {
   z-index: 2;
   outline: none;
   font-size: 1em;
-}
 
-#search-form-clear:hover {
-  outline: none;
-  color: #222;
-}
+  &:hover {
+    outline: none;
+    color: #222;
+  }
+`;
+export { SearchContainer, Logo, SearchBar, SearchInput, SearchFormClear };
